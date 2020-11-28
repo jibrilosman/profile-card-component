@@ -1,0 +1,95 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    position: relative;
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+.container {
+    position: relative;
+    background-color: hsl(185, 75%, 39%);
+    background-size: contain;
+    height: 98vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    overflow: hidden;
+}
+.container::before {
+    top: 0;
+    left: 0;
+    background-image: url(images/bg-pattern-top.svg);
+    background-repeat: no-repeat;
+    background-position: bottom right;
+}
+.container::before, 
+.container::after {
+    position: absolute;
+    content: "";
+    width: 100vw;
+    height: 100vh;
+    background-size: auto;
+    transform: translate(-50%, -50%);
+}
+.container::after {
+    top: 100%;
+    left: 100%;
+    background-image: url(images/bg-pattern-bottom.svg);
+    background-repeat: no-repeat;
+    background-position: top left;
+}
+.card-container {
+    display: block;
+    max-width: 850px;
+    z-index: 1;
+}
+.profile-card {
+    width: 350px;
+    height: 100%;
+    background-image: url(images/bg-pattern-card.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: #ffffff;
+    border-radius: 20px;
+    z-index: 1;
+}
+.avatar {
+    border: 5px solid #ffffff;
+    border-radius: 50%;
+}
+.card-header {
+    padding-top: 25%;
+    padding-bottom: 14%;
+    text-align: center;
+}
+h3 {
+    color: hsl(229, 23%, 23%);
+    font-size: 18px;
+    font-weight: 700;
+}
+span {
+    font-weight: 400;
+    color: hsl(0, 0%, 59%);;
+}
+.card-header h3 {  
+    padding-top: 7%;
+}
+.card-footer {
+    text-align: center;
+    line-height: 1.5rem;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 9%;
+    padding-bottom: 12%;
+    border-top: 1px solid hsl(227, 10%, 46%);
+}
+@media only screen and (max-width: 768px) {
+    .profile-card {
+        width: 290px;
+    }
+}
